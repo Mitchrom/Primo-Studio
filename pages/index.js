@@ -41,15 +41,12 @@ export default function Home() {
   const [radio, setRadio] = useState("light");
   //Header
   const [menuClicked, setMenuClicked] = useState(false);
-  //pour les différent fetch
-  const [services, setServices] = useState(null);
 
   useEffect(() => {
     setMounted(true);
     setClicked(true);
     setMenuClicked(false);
     setRadio("system");
-    console.log("montage");
   }, []);
 
   useEffect(() => {
@@ -66,8 +63,9 @@ export default function Home() {
     if (radio != "system") {
       setClicked(false);
       setTheme(radio);
+      console.log(theme);
+      console.log(clicked);
     }
-    console.log("radio");
   }, [radio]);
   if (!mounted) return null;
 

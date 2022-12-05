@@ -44,15 +44,11 @@ export default function Home() {
   //pour les différent fetch
   const [services, setServices] = useState(null);
 
-  // const servicesURL = "http://localhost:1337/api/services?populate=*";
   useEffect(() => {
     setMounted(true);
     setClicked(true);
     setMenuClicked(false);
     setRadio("system");
-    // axios.get(servicesURL).then((res) => {
-    //   setServices(res.data.data);
-    // });
     console.log("montage");
   }, []);
 
@@ -73,7 +69,6 @@ export default function Home() {
     }
     console.log("radio");
   }, [radio]);
-  // if (!services) return null;
   if (!mounted) return null;
 
   setTimeout(() => {

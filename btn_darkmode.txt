@@ -1,0 +1,85 @@
+      {/* <div className="flex justify-center">
+        {currentTheme === "dark" ? (
+          <button
+            className="bg-black-700 hover:bg-black w-fit rounded-md border-purple-400 border-2 p-4"
+            onClick={() => setTheme("light")}
+          >
+            <Image src={"/moon.svg"} alt="" height={24} width={24} />
+          </button>
+        ) : (
+          <button
+            className="bg-gray-100 hover:bg-gray-300 w-fit rounded-md border-purple-400 border-2 p-4"
+            onClick={() => setTheme("dark")}
+          >
+            <Image src={"/sun.svg"} alt="" height={24} width={24} />
+          </button>
+        )}
+      </div> */}
+
+                {/* {clicked ? null : (
+            <Switch
+              checked={enable}
+              onChange={() => {
+                setEnable(!enable);
+                currentTheme === "dark" ? setTheme("light") : setTheme("dark");
+              }}
+              className={`${
+                enable ? "bg-neutral-700" : "bg-gray-300"
+              } relative inline-flex h-6 w-11 items-center rounded-full`}
+            >
+              <span className="sr-only"></span>
+              <span
+                className={`${
+                  enable ? "translate-x-6" : "translate-x-1"
+                } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+              />
+            </Switch>
+          )} */}
+
+
+
+
+
+                      <Popover className="relative border border-black rounded p-1">
+              <Popover.Button>Choisir thème</Popover.Button>
+
+              <Popover.Panel className="absolute z-10">
+                <div className="flex flex-col p-5 bg-stone-500 dark:bg-neutral-400">
+                  <RadioGroup value={radio} onChange={setRadio}>
+                    <RadioGroup.Option value="light">
+                      {({ checked }) => (
+                        <span
+                          className={
+                            checked ? "bg-zinc-200 dark:bg-zinc-500" : ""
+                          }
+                        >
+                          Clair
+                        </span>
+                      )}
+                    </RadioGroup.Option>
+                    <RadioGroup.Option value="dark">
+                      {({ checked }) => (
+                        <span
+                          className={
+                            checked ? "bg-zinc-200 dark:bg-zinc-500" : ""
+                          }
+                        >
+                          Sombre
+                        </span>
+                      )}
+                    </RadioGroup.Option>
+                    <RadioGroup.Option value="system">
+                      {({ checked }) => (
+                        <span
+                          className={
+                            checked ? "bg-zinc-200 dark:bg-zinc-500" : ""
+                          }
+                        >
+                          Automatique
+                        </span>
+                      )}
+                    </RadioGroup.Option>
+                  </RadioGroup>
+                </div>
+              </Popover.Panel>
+            </Popover>

@@ -41,7 +41,8 @@ export default function Home() {
     setClicked(true);
     setMenuClicked(false);
     setRadio("system");
-  }, []);
+    setTheme("light");
+  }, [theme]);
 
   useEffect(() => {
     if (ajd.getHours() < 6 || ajd.getHours() > 17) {
@@ -50,7 +51,7 @@ export default function Home() {
     if (ajd.getHours() >= 6 && ajd.getHours() <= 17) {
       setTheme("light");
     }
-  }, [ajd]);
+  }, [ajd, theme]);
 
   useEffect(() => {
     if (radio == "system") setClicked(true);
@@ -58,7 +59,7 @@ export default function Home() {
       setClicked(false);
       setTheme(radio);
     }
-  }, [radio]);
+  }, [radio, theme]);
   if (!mounted) return null;
 
   setTimeout(() => {

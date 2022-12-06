@@ -31,40 +31,35 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   //pour le darkmode de façon dynamique
   const [ajd, setAjd] = useState(new Date());
-  const [clicked, setClicked] = useState(false);
-  const [radio, setRadio] = useState("light");
   //Header
   const [menuClicked, setMenuClicked] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    setClicked(true);
-    setMenuClicked(false);
-    setRadio("system");
-    setTheme("light");
-  }, [theme]);
-
-  useEffect(() => {
-    if (ajd.getHours() < 6 || ajd.getHours() > 17) {
-      setTheme("dark");
-    }
-    if (ajd.getHours() >= 6 && ajd.getHours() <= 17) {
-      setTheme("light");
-    }
-  }, [ajd, theme]);
-
-  useEffect(() => {
-    if (radio == "system") setClicked(true);
-    if (radio != "system") {
-      setClicked(false);
-      setTheme(radio);
-    }
-  }, [radio, theme]);
-  if (!mounted) return null;
 
   setTimeout(() => {
     setAjd(new Date());
   }, 1000);
+
+  const getTheme = () => {
+    if (ajd.getHours() < 6 || ajd.getHours() > 8) {
+      setTheme("dark");
+    }
+    if (ajd.getHours() >= 6 && ajd.getHours() <= 8) {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    setMounted(true);
+    setMenuClicked(false);
+    setTheme("light");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    getTheme;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ajd]);
+  if (!mounted) return null;
+
   // const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (

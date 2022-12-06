@@ -29,9 +29,7 @@ import { Partenaires } from "./item/Partenaires";
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  //pour le darkmode de façon dynamique
   const [ajd, setAjd] = useState(new Date());
-  //Header
   const [menuClicked, setMenuClicked] = useState(false);
 
   setTimeout(() => {

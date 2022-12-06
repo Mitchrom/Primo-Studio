@@ -24,12 +24,6 @@ import { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { HeaderDesktop, HeaderMobile } from "./shared/Header";
-import {
-  Service,
-  ServicesContainer,
-  ServiceTitle,
-  ServiceTxt,
-} from "./shared/Services";
 import { Partenaires } from "./item/Partenaires";
 
 export default function Home() {
@@ -63,8 +57,6 @@ export default function Home() {
     if (radio != "system") {
       setClicked(false);
       setTheme(radio);
-      console.log(theme);
-      console.log(clicked);
     }
   }, [radio]);
   if (!mounted) return null;
